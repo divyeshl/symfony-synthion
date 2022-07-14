@@ -1,0 +1,13 @@
+  Nettivene\:
+    resource: '../src/*'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Entity/'
+      - '../src/Kernel.php'
+      - '../src/Tests/'
+
+  Nettivene\Service\Cyberpunk\DtoInterface: '@Nettivene\Service\Cyberpunk\Dto'
+
+  Nettivene\Service\Cyberpunk\Service:
+    arguments:
+      $isAdmin: true

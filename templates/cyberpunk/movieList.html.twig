@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CyberpunkController!{% endblock %}
+
+{% block content %}
+<div class="example-wrapper">
+    {% for year,movieList in movies %}
+        Movies released in {{ year }}: {{ movieList }}<br />
+    {% endfor %}
+</div>
+{% endblock %}
