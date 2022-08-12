@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LuckyDrawController!{% endblock %}
+
+{% block content %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        {{ form_start(form, { "action": "", "method": "GET" }) }}
+        <div>
+            {{ form_label(form.username) }}
+            {{ form_widget(form.username) }}
+        </div>
+
+        <div>
+            {{ form_label(form.language) }}
+            {{ form_widget(form.language) }}
+        </div>
+
+        <div>
+            {{ form_label(form.games) }}
+            {{ form_widget(form.games) }}
+        </div>
+
+        <div>
+            {{ form_label(form.achievements) }}
+            {{ form_widget(form.achievements) }}
+        </div>
+        {{ form_widget(form.submit) }}
+        {{ form_end(form) }}
+    </div>
+    <div>
+        {% for key, item in reqData %}
+            {{ key }} - {{ item|join('|') }}<br/>
+        {% endfor %}
+    </div>
+{% endblock %}
